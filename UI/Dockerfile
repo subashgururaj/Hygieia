@@ -2,6 +2,7 @@ FROM docker.io/nginx:latest
 
 COPY docker/default.conf /etc/nginx/conf.d/default.conf.templ
 COPY docker/conf-builder.sh /usr/bin/conf-builder.sh
+ADD ./dist /usr/share/nginx/html
 COPY dist /usr/share/nginx/html
 RUN chown -R nginx:nginx /usr/share/nginx/html/
 
